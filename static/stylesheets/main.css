@@ -1,0 +1,56 @@
+body {
+  font-family : "Oxygen", sans-serif;
+}
+
+h1 {
+  color : white;
+}
+
+#app-title {
+  letter-spacing: 5px;
+  font-weight : bold;
+}
+
+body {
+  background-image: url(../images/background_small.png);
+  background-size : 100% 100vh ;
+  background-repeat : no-repeat;
+}
+
+form {
+  font-size : 20px;
+  height : 40vh;
+  color  : white;
+  background-color : rgba(127, 140, 141,.7);
+  padding: 10%;
+  border-radius : 15%;
+
+}
+
+form input {
+  color : #2c3e50;
+  font-size: 15px;
+}
+
+form h3 {
+  margin-top: 0
+}
+
+/*.form-container {
+  margin-top : 50px;
+}*/
+
+.submit {
+  margin-top : 10px;
+}
+
+.symbol {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
+
+.glyphicon {
+  color     : white;
+  font-size : 50px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app = "app">
+<head>
+  <!-- CSS -->
+  <link href = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.css" rel = "stylesheet" />
+  <link href = "stylesheets/main.css" rel = "stylesheet" />
+  <!-- Javascripts -->
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.js" type = "text/javascript"></script>
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular-animate.js" type = "text/javascript"></script>
+  <script src = "javascripts/main.js" type = "text/javascript"></script>
+  <script src = "javascripts/controller.js" type = "text/javascript"></script>
+  <script src = "javascripts/factory.js" type = "text/javascript"></script>
+  <!-- Fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller = "masterController">
+  <div class = "row">
+    <div class = "header navbar-fixed-top">
+      <div class = "col-xs-2" ng-repeat = "progress in meter" >
+
+      </div>
+    </div>
+  </div>
+  <div class = "container">
+    <div class = "row">
+      <div class = "col-xs-4 col-xs-offset-4 text-center">
+        <h1 id = "app-title">bring <span style = "color : rgb(188, 61, 86)">It!</span></h1>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "form-container col-xs-8 col-xs-offset-2">
+        <form ng-repeat = "question in survey" ng-show = "currentQ == $index" class = "text-center">
+          <h3>{{ question.content }}</h3>
+          <div ng-repeat = "answer in question.answers" class = "answer-container">
+            <input type = "radio"/>  {{ answer }}  <br />
+          </div>
+          <input ng-click = "click($index)" class = "submit" type = "submit" />
+        </form>
+      </div>
+    </div>
+
+    <div class = "row">
+      <div class = "footer navbar-fixed-bottom">
+        <div class = "col-xs-1" ng-repeat = "symbol in symbols" >
+          <span class = "glyphicon glyphicon-exclamation-sign"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.js" type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.js" type = "text/javascript"></script>
+
+</body>
+</html>
