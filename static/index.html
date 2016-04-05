@@ -15,10 +15,12 @@
 </head>
 
 <body ng-controller = "masterController">
-  <div class = "row">
-    <div class = "header navbar-fixed-top">
-      <div class = "col-xs-2" ng-repeat = "progress in meter" >
-
+  <div class = "container-fluid">
+    <div class = "row">
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( percentage + '%' ) }">
+          <span class="sr-only">60% Complete</span>
+        </div>
       </div>
     </div>
   </div>
@@ -29,21 +31,32 @@
       </div>
     </div>
     <div class = "row">
-      <div class = "form-container col-xs-8 col-xs-offset-2">
-        <form ng-repeat = "question in survey" ng-show = "currentQ == $index" class = "text-center">
-          <h3>{{ question.content }}</h3>
-          <div ng-repeat = "answer in question.answers" class = "answer-container">
-            <input type = "radio"/>  {{ answer }}  <br />
-          </div>
-          <input ng-click = "click($index)" class = "submit" type = "submit" />
+      <div class = "form-container col-sm-10 col-sm-offset-1">
+        <form class = "form-horizontal" ng-repeat = "question in survey" ng-show = "currentQ == $index">
+
+            <div class = "form-group">
+              <h3 class = "col-sm-12 text-center">{{ question.content }}</h3>
+            </div>
+
+            <div class = "form-group">
+              <div class = "col-sm-3 text-center" ng-repeat = "answer in question.answers">
+                <input class = "radio-buttons" type = "radio">  {{ answer }}  <br />
+              </div>
+            </div>
+
+            <div class ="form-group text-center">
+              <input ng-click = "click($index)" class = "submission" type = "submit">
+            </div>
+
         </form>
       </div>
     </div>
 
     <div class = "row">
       <div class = "footer navbar-fixed-bottom">
-        <div class = "col-xs-1" ng-repeat = "symbol in symbols" >
+        <div class = "col-xs-2" ng-repeat = "symbol in symbols" >
           <span class = "glyphicon glyphicon-exclamation-sign"></span>
+          <span class = "glyphicon glyphicon0"
         </div>
       </div>
     </div>
